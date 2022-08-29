@@ -23,7 +23,7 @@ router.use((req, resp, next) => {
 
 router.get("/", async (req, resp)=> {
     const month = req.query.month;   // 2022-08
-    const parsed = month.split("-");
+    const parsed = month.split("-");        //0~11      1~12
     const begin = new Date(parsed[0], parsed[1]-1, 1);    
     const end = new Date(parsed[0], parsed[1], 1);    
     console.log(begin, end);
@@ -57,5 +57,5 @@ router.delete("/delete", (req, resp)=> {
     return resp.status(200).json({ result:true } );
 });
 
- 
+
 export default router;
