@@ -51,7 +51,7 @@ router.post("/write", async (req, resp)=> {
         resp.status(500).send({result:false, "message" :err.message});
     }
 });
- 
+
 router.delete("/delete", (req, resp)=> {
     console.log(req.logonEmail);
     return resp.status(200).json({ result:true } );
